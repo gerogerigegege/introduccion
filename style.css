@@ -17,3 +17,7 @@ body {
     left: 20px;
   }
 }
+
+audio {
+  display: none;
+}
