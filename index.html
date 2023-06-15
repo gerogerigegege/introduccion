@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>CodePen - A Pen by Roberto Valdivia</title>
   <link rel="stylesheet" href="./style.css">
 
+  <style>
+    /* Estilos para los controles de audio */
+    audio {
+      display: none;
+    }
+
+    .audio-player {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .audio-player::before {
+      content: '\25B6';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: #00ff00;
+      font-family: 'Press Start 2P', cursive;
+      text-shadow: 1px 1px 4px #00ff00;
+    }
+
+    .audio-player:hover::before {
+      text-shadow: none;
+    }
+
+    .audio-player::-webkit-media-controls-panel {
+      display: flex;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 4px;
+      padding: 4px;
+    }
+
+    .audio-player::-webkit-media-controls-play-button {
+      display: none;
+    }
+
+    .audio-player::-webkit-media-controls-timeline,
+    .audio-player::-webkit-media-controls-current-time-display,
+    .audio-player::-webkit-media-controls-time-remaining-display {
+      display: none;
+    }
+
+    .audio-player::-webkit-media-controls-volume-slider {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -22,13 +72,15 @@
 </body>
 </html>
 <!-- partial -->
-  <script  src="./script.js"></script>
+  <script src="./script.js"></script>
   <h1>Reproductor de audio</h1>
 
-    <audio controls>
-        <source src="X2Download.app - 遠くの愛好家 (320 kbps).mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-    </audio>
+    <div class="audio-player">
+      <audio>
+          <source src="X2Download.app - 遠くの愛好家 (320 kbps).mp3" type="audio/mpeg">
+          Tu navegador no soporta el elemento de audio.
+      </audio>
+    </div>
 
 </body>
 </html>
